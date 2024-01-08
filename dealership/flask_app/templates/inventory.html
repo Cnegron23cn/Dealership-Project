@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <!--TOP NAV IN GREEN-->
+<div>
+    <div id="nav">
+        <h1 class="profile">CN </span>&nbsp;<span>
+            <span style="color: #68e48d" >A</span>utomotive </span>&nbsp;<span>
+            <span style="color:  #68e48d;" >D</span>ealership
+        </h1>
+        <ul class="nav-links">
+            <li><a href="/allcars"  onmouseover="over(this)" onmouseout="out(this)">INVENTORY</a></li>
+            <li><a href="/contact" onmouseover="over(this)" onmouseout="out(this)">CONTACT US</a></li>
+            <li><a href="tel:7187466063" onmouseover="over(this)" onmouseout="out(this)"> &#9990; (718) 746-6063 </a></li>
+            <li><a href="/service"  onmouseover="over(this)"onmouseout="out(this)">SERVICES</a></li>
+            <div class="dropdown">
+                <button class="dropbtn" style="border-radius: 3px;">Click For More</button>
+                <div class="dropdown-content">
+                <a href="/contact">Schedule an appointment</a>
+                <a href="/about_us">About us</a>
+                <a href="/careers">Careers</a>
+                </div>
+            </div>
+        </ul>
+    </div>
+    <!-- END OF TOP NAV IN GREEN-->
+    <!--SECONDARY NAV IN BLACK-->
+    <div class="header" style="justify-content:space-between;">
+        <h1 class="head">We have been proudly serving the community for over 30 years</h1>
+        <a href="/tour" class="tour" onmouseover="hover(this)" onmouseout="end_hover(this)" style="border: none; color: white; background-color: #68e48d; margin-left: 20%;">
+        TOUR OUR FACILITY</a>
+        <!--IF USER IS NOT IN SESSION DONT SHOW THIS ORRR SHOW POP UP -->
+        <button onclick="togglePopup()" class="popupbtn" style="margin-left: 15px;">&#9825; Saved Searches</button>
+
+        <a href="/dashboard" style="color: blue;">back to dashboard</a>
+
+        <!--POP UP SECTION FOR SAVED SEARCHES-->
+        <div class="popup" id="popup-1">
+            <div class="overlay-div"></div>
+            <div class="content">
+                <div class="close-btn"  onclick="togglePopup()">&#10006;</div>
+                <h1>Saved Searches:</h1>
+                <p style="margin-top: 30px;">Please Login or Register to save your searches.</p>
+                <p style="text-align: center; margin-top: 20px;">Thank You.</p>
+            </div>
+        </div>
+        <!--END OF POP UP SECTION FOR SAVED SEARCHES-->
+    </div>
+
+    <!--END OF SECONDARY NAV IN BLACK-->
+    <h1 style="margin: 10px;">All Cars For Sale, NYC</h1>
+    <div style="display: flex;"><p style="margin: 10px;">Filter:</p>
+        <div class="dropdown">
+            <button class="dropdownbtn">Sort By &#10095;</button>
+            <div class="dropdown-content">
+            <a href="#">Price: Low to High</a>
+            <a href="#">Price: High to Low</a>
+            <a href="#">Milage: Low to High</a>
+            <a href="#">Milage: High to Low</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!--FIRST ROW OF CAR INVENTORY-->
+        <!--Rearrange them as forms, display the info on the saved cars page-->
+        <div style="display: flex;" >
+            <div class="car-box">
+                <img src="{{ url_for('static', filename='sedan1.jpg') }}" class="inventory" alt="car">
+                <h3 style="margin-left: 25px;">2020 Buick Encore Preferred AWD</h3>
+                <div style="display: flex; justify-content: space-between; padding: 5px; margin-right: 20px;">
+                    <p style="color: grey;">19,420 miles</p>
+                    <h3>$ 19,950</h3>
+                </div>
+                <p style="color: gray; padding: 5px;">155 hp 1.3L V3</p>
+                <div style="display: flex; justify-content: space-between;">
+    <!--LINK THIS TO SAVE SEARCH PAGE-->
+            <a href="#" onclick="togglePopup()" style="color: blue; margin-left: 5px; font-size: 20px; border: none;">&#9741; Saved Search</a>
+            <button style="background-color: rgb(2, 146, 146); margin-right: 20px; border-radius: 3px;">
+                <a href="/contact"style="color: white; padding:3px;">Request Info</a></button>
+                </div>
+            </div>
+            <!--next box-->
+            <div class="car-box">
+                <img src="{{ url_for('static', filename='sport1.jpg') }}" class="inventory" alt="car">
+                <h3 style="margin-left: 25px;">2023 Chevorlet Corvette Stingray 1LT</h3>
+                <div style="display: flex; justify-content: space-between; padding: 5px; margin-right: 20px;">
+                    <p style="color: grey;">2,920 miles</p>
+                    <h3>$75,000</h3>
+                </div>
+                <p style="color: gray; padding: 5px;">6.2L V8</p>
+                <div style="display: flex; justify-content: space-between;">
+                <a href="#" onclick="togglePopup()" style="color: blue; margin-left: 5px; font-size: 20px;">&#9741; Saved Search</a>
+                    <button style="background-color: rgb(2, 146, 146); margin-right: 20px; border-radius: 3px;">
+                    <a href="/contact"style="color: white; padding:3px;">Request Info</a>
+                    </button>
+                </div>
+            </div>
+            <!--next box-->
+            <div class="car-box">
+                <img src="{{ url_for('static', filename='suv1.jpg') }}" class="inventory" alt="car">
+                <h3 style="margin-left: 25px;">2018 Audi Q5 2.0 TFSI quattro</h3>
+                <div style="display: flex; justify-content: space-between; padding: 5px; margin-right: 20px;">
+                    <p style="color: grey;">17,014 miles</p>
+                    <h3>$ 22,955</h3>
+                </div>
+                <p style="color: gray; padding: 5px;">252 hp 2L 14</p>
+                <div style="display: flex; justify-content: space-between;">
+                <a href="#" onclick="togglePopup()" style="color: blue; margin-left: 5px; font-size: 20px;">&#9741; Saved Search</a>
+                    <button style="background-color: rgb(2, 146, 146); margin-right: 20px; border-radius: 3px;">
+                    <a href="/contact"style="color: white; padding:3px;">Request Info</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--SECOND ROW OF CAR INVENTORY-->
+        <div style="display: flex; margin-top: 15px;">
+            <div class="car-box">
+                <img src="{{ url_for('static', filename='sedan2.jpg') }}" class="inventory" alt="car">
+                <h3 style="margin-left: 80px;">2023 Kia Rio FX FWD</h3>
+                <div style="display: flex; justify-content: space-between; padding: 5px; margin-right: 20px;">
+                    <p style="color: grey;">20,860 miles</p>
+                    <h3>$ 18,000</h3>
+                </div>
+                <p style="color: gray; padding: 5px;">120 hp 1.6L 14</p>
+                <div style="display: flex; justify-content: space-between;">
+                <a href="#" onclick="togglePopup()" style="color: blue; margin-left: 5px; font-size: 20px;">&#9741; Saved Search</a>
+                    <button style="background-color: rgb(2, 146, 146); margin-right: 20px; border-radius: 3px;">
+                    <a href="/contact"style="color: white; padding:3px;">Request Info</a>
+                    </button>
+                </div>
+            </div>
+            <!--next box-->
+                <div class="car-box">
+            <img src="{{ url_for('static', filename='sport2.jpg') }}" class="inventory" alt="car">
+            <h3 style="margin-left: 25px;">2012 Porchse Panamera 4S AWD</h3>
+                <div style="display: flex; justify-content: space-between; padding: 5px; margin-right: 20px;">
+                    <p style="color: grey;">76,860 miles</p>
+                    <h3>$ 28,800</h3>
+                </div>
+                <p style="color: gray; padding: 5px;">400 hp 4.8L V8</p>
+                <div style="display: flex; justify-content: space-between;">
+                <a href="#" onclick="togglePopup()" style="color: blue; margin-left: 5px; font-size: 20px;">&#9741; Saved Search</a>
+                    <button style="background-color: rgb(2, 146, 146); margin-right: 20px; border-radius: 3px;">
+                    <a href="/contact"style="color: white; padding:3px;">Request Info</a>
+                    </button>
+                </div>
+            </div>
+            <!--next box-->
+            <div class="car-box">
+                <img src="{{ url_for('static', filename='suv2.jpg') }}" class="inventory" alt="car">
+                <h3 style="margin-left: 25px;">2023 Jeep Compass Latitude 4WD </h3>
+                <div style="display: flex; justify-content: space-between; padding: 5px; margin-right: 20px;">
+                    <p style="color: grey;">30,444 miles</p>
+                    <h3>$ 27,750</h3>
+                </div>
+                <p style="color: gray; padding: 5px;">200 hp 2L 14</p>
+                <div style="display: flex; justify-content: space-between;">
+                <a href="#"  onclick="togglePopup()" style="color: blue; margin-left: 5px; font-size: 20px;">&#9741; Saved Search</a>
+                    <button style="background-color: rgb(2, 146, 146); margin-right: 20px; border-radius: 3px;">
+                    <a href="/contact" style="color: white; padding:3px;">Request Info</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--THIRD ROW OF CAR INVENTORY-->
+        <div style="display: flex; margin-top: 15px;">
+            <div class="car-box">
+                <img src="{{ url_for('static', filename='suv3.jpg') }}" class="inventory" alt="car">
+                <h3 style="margin-left: 70px;">2012 Kia Soul LX FWD</h3>
+                <div style="display: flex; justify-content: space-between; padding: 5px; margin-right: 20px;">
+                    <p style="color: grey;">70,910 miles</p>
+                    <h3>$ 8,990</h3>
+                </div>
+                <p style="color: gray; padding: 5px;">147 hp 2L 14</p>
+                <div style="display: flex; justify-content: space-between;">
+                <a href="#" onclick="togglePopup()" style="color: blue; margin-left: 5px; font-size: 20px;">&#9741; Saved Search</a>
+                    <button style="background-color: rgb(2, 146, 146); margin-right: 20px; border-radius: 3px;">
+                    <a href="/contact"style="color: white; padding:3px;">Request Info</a>
+                    </button>
+                </div>
+            </div>
+            <!--next box-->
+            <div class="car-box">
+                <img src="{{ url_for('static', filename='sedan3.jpg') }}" class="inventory" alt="car">
+                <h3 style="margin-left: 50px;">2014 Honda Civic LX FWD</h3>
+                <div style="display: flex; justify-content: space-between; padding: 5px; margin-right: 20px;">
+                    <p style="color: grey;">76,992 miles</p>
+                    <h3>$ 9,110</h3>
+                </div>
+                <p style="color: gray; padding: 5px;">158 hp 2L 14</p>
+                <div style="display: flex; justify-content: space-between;">
+                <a href="#" onclick="togglePopup()" style="color: blue; margin-left: 5px; font-size: 20px;">&#9741; Saved Search</a>
+                    <button style="background-color: rgb(2, 146, 146); margin-right: 20px; border-radius: 3px;">
+                    <a href="/contact"style="color: white; padding:3px;">Request Info</a>
+                    </button>
+                </div>
+            </div>
+            <!--next box-->
+            <div class="car-box">
+                <img src="{{ url_for('static', filename='sport3.jpg') }}" class="inventory" alt="car">
+                <h3 style="margin-left: 60px;">2021 Lexus IS 300 AWD</h3>
+                <div style="display: flex; justify-content: space-between; padding: 5px; margin-right: 20px;">
+                    <p style="color: grey;">56,020 miles</p>
+                    <h3>$31,100</h3>
+                </div>
+                <p style="color: gray; padding: 5px;">260 hp 3.5L V6</p>
+                <div style="display: flex; justify-content: space-between;">
+                <a href="#"  onclick="togglePopup()"style="color: blue; margin-left: 5px; font-size: 20px;">&#9741; Saved Search</a>
+                    <button style="background-color: rgb(2, 146, 146); margin-right: 20px; border-radius: 3px;">
+                    <a href="/contact"style="color: white; padding:3px;">Request Info</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+    </style>
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <div id="nav">
+        <h1 class="profile">CN </span>&nbsp;<span>
+            <span style="color: #68e48d" >A</span>utomotive </span>&nbsp;<span>
+            <span style="color:  #68e48d;" >D</span>ealership
+        </h1>
+        <ul class="nav-links">
+            <li><a href="/dashboard_inventory"  onmouseover="over(this)" onmouseout="out(this)">INVENTORY</a></li>
+            <li><a href="/contact" onmouseover="over(this)" onmouseout="out(this)">CONTACT US</a></li>
+            <li><a href="#" onmouseover="over(this)" onmouseout="out(this)"> &#9990; (718) 746-6063</a></li>
+            <li><a href="/service"  onmouseover="over(this)"onmouseout="out(this)">SERVICES</a></li>
+            <div class="dropdown">
+                <button class="dropbtn" style="border-radius: 3px;">Click For More</button>
+                <div class="dropdown-content">
+                <a href="/contact">Schedule an appointment</a>
+                <a href="/about_us">About us</a>
+                <a href="/careers">Careers</a>
+                </div>
+            </div>
+        </ul>
+    </div>
+
+    <div class="header" style="justify-content:space-between;">
+        <h1 class="head">We have been proudly serving the community for over 30 years</h1>
+        <a href="/tour" class="tour" onmouseover="hover(this)" onmouseout="end_hover(this)" style="border: none; color: white; background-color: #68e48d; margin-left: 19%;">
+        TOUR OUR FACILITY</a>
+        <a href="/">Sign Out</a>
+        <a href="/dashboard" style="color: blue; margin-right: 17px;">Back to Dashboard</a>
+    </div>
+
+
+<p>{{ img }}</p>
+
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>

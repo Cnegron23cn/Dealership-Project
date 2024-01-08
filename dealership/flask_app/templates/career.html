@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+    crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <!--TOP NAV IN GREEN-->
+<div>
+    <div id="nav">
+        <h1 class="profile">CN </span>&nbsp;<span>
+            <span style="color: #68e48d" >A</span>utomotive </span>&nbsp;<span>
+            <span style="color:  #68e48d;" >D</span>ealership
+        </h1>
+        <ul class="nav-links">
+            <li><a href="/allcars"  onmouseover="over(this)" onmouseout="out(this)">INVENTORY</a></li>
+            <li><a href="/contact" onmouseover="over(this)" onmouseout="out(this)">CONTACT US</a></li>
+            <li><a href="#" onmouseover="over(this)" onmouseout="out(this)"> &#9990; (718) 746-6063</a></li>
+            <li><a href="/service"  onmouseover="over(this)"onmouseout="out(this)">SERVICES</a></li>
+            <div class="dropdown">
+                <button class="dropbtn" style="border-radius: 3px;">Click For More</button>
+                <div class="dropdown-content">
+                <a href="/contact">Schedule an appointment</a>
+                <a href="/about_us">About us</a>
+                <a href="/careers">Careers</a>
+                </div>
+            </div>
+        </ul>
+    </div>
+<!-- END OF TOP NAV IN GREEN-->
+    <h1 style="text-align:center; font-family: 'Courier New', Courier, monospace;">Employment Application</h1>
+    <h3 style="text-align: center; font-family: 'Courier New', Courier, monospace; margin-top: 10px; font-size: 20px;">
+        Fill out the form below and upload your resume (optional) to apply for a position.</h3>
+</div>
+<!--EMPLOYMENT FORM-->
+<div  class="career-container">
+    <form action="#">
+        <h2 style="text-align: center;">Employment Form</h2>
+        <div style="display: flex;">
+            <div>
+                <label for="name" class="career-label">Full Name</label>
+                <input type="text" name="name" class="career-input">
+            </div>
+            <div>
+                <label for="resume" class="career-label" style="margin-left: 20px;">Upload your resume here</label>
+                <input type="file" id="resume" name="resume" accept="image/png, image/jpeg" style="margin-left: 20px;"/>
+            </div>
+        </div>
+
+        <div style="display: flex;">
+            <div>
+                <label for="number" class="career-label">Phone Number</label><br>
+                <input type="text" name="number" class="career-input">
+            </div>
+
+            <div>
+                <label for="email" class="career-label" style="margin-left: 20px;">Best way to contact you:</label><br>
+                <select style="margin-left: 20px;">
+                    <option>Email</option>
+                    <option>Password</option>
+                </select>
+            </div>
+        </div>
+
+        <div style="display: flex;">
+            <div>
+                <label for="email" class="career-label">Email</label><br>
+                <input type="text" name="email" class="career-input">
+            </div>
+
+            <div>
+                <p class="career-label" style="margin-left: 20px;">Gender</p>
+                <input type="radio" for="female" name="female" value="female" style="margin-left: 15px;">
+                <label for="gender">Female</label>
+                <input type="radio" for="male" name="male" value="male">
+                <label for="gender">Male</label>
+                <input type="radio" for="none" name="none" value="none" >
+                <label for="gender">Prefer not to say</label>
+            </div>
+        </div>
+
+        <div style="display: flex;">
+            <div>
+                <label for="position" class="career-label">Positon Applying For:</label><br>
+                <select style="margin-left: 10px;">
+                    <option>mechanic</option>
+                    <option>sales</option>
+                    <option>customer service</option>
+                </select>
+            </div>
+            <div>
+                <label for="experience" class="career-label" style="margin-left: 80px;">Previous Experience</label><br>
+                <textarea name="experience" id=" experience" style="width: 250px; height: 80px; margin-left: 80px;"></textarea>
+            </div>
+        </div>
+        <input type="submit" value="Submit" style=" background-color: rgb(114, 222, 255); border-radius: 3px; padding: 7px; position: absolute; top: 77%; left: 26%;">
+    </form>
+</div>
+
+<a href="/dashboard" style="margin-left: 50px;">Back to Site</a>
+
+<script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>

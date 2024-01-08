@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <!--TOP NAV IN GREEN-->
+<div>
+    <div id="nav">
+        <h1 class="profile">CN </span>&nbsp;<span>
+            <span style="color: #68e48d" >A</span>utomotive </span>&nbsp;<span>
+            <span style="color:  #68e48d;" >D</span>ealership
+        </h1>
+        <ul class="nav-links">
+            <li><a href="/allcars"  onmouseover="over(this)" onmouseout="out(this)">INVENTORY</a></li>
+            <li><a href="/contact" onmouseover="over(this)" onmouseout="out(this)">CONTACT US</a></li>
+            <li><a href="#" onmouseover="over(this)" onmouseout="out(this)"> &#9990; (718) 746-6063</a></li>
+            <li><a href="/service"  onmouseover="over(this)"onmouseout="out(this)">SERVICES</a></li>
+            <div class="dropdown">
+                <button class="dropbtn" style="border-radius: 3px;">Click For More</button>
+                <div class="dropdown-content">
+                <a href="/contact">Schedule an appointment</a>
+                <a href="/about_us">About us</a>
+                <a href="/careers">Careers</a>
+                </div>
+            </div>
+        </ul>
+    </div>
+    <!-- END OF TOP NAV IN GREEN-->
+    <!--SECONDARY NAV IN BLACK-->
+    <div class="header" style="justify-content:space-between; background-color: rgb(0, 0, 0);">
+        <h1 class="head">We have been proudly serving the community for over 30 years</h1>
+        <a href="/dashboard" style="color: blue; margin-left: 140px;">Back to Site</a>
+        <a href="/tour" class="tour" onmouseover="hover(this)" onmouseout="end_hover(this)" style="border: none; color: white; background-color: #68e48d;">
+        TOUR OUR FACILITY</a>
+        <!--LOGIN POPUP-->
+    <div class="popup" id="popup-2">
+        <div class="overlay-div"></div>
+            <div class="content">
+                <div class="close-btn"  onclick="loginPopup()">&#10006;</div>
+                    <h3>Login:</h3>
+                    <div>
+                    <form action="/login" method="post" style="width: 300px; height: 300px; margin-top: 20px;">
+                    {% with messages = get_flashed_messages(category_filter=['login']) %}
+                        {%if messages %}
+                            {% for message in messages %}
+                                <p style="color: red;">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" id="email" required style="width: 200px; height: 30px; margin-top: 20px; margin-left: 30px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" id="password" required style="width: 200px; height: 30px; margin-top: 20px;">
+                    </div>
+                        <input type="submit" value="login" style="width: 50px; height: 40px; margin-top: 10px; background-color: rgb(76, 97, 216); color: white; border: none; border-radius: 3px;">
+                    </form>
+                </div>
+            </div>
+        </div>
+            <!--END OF LOGIN POP UP-->
+
+        <!--POP UP SECTION FOR SAVED SEARCHES-->
+        <div class="popup" id="popup-1">
+            <div class="overlay-div"></div>
+            <div class="content">
+                <div class="close-btn"  onclick="togglePopup()">&#10006;</div>
+                <h1>Saved Searches:</h1>
+                <p style="margin-top: 30px;">Please Login or Register to save your searches.</p>
+                <p style="text-align: center; margin-top: 20px;">Thank You.</p>
+            </div>
+        </div>
+        <!--END OF POP UP SECTION FOR SAVED SEARCHES-->
+    </div>
+
+    <!--END OF TOUR POP UP-->
+    <!--END OF SECONDARY NAV IN BLACK-->
+
+    <div style="width: 100%; height: 743px; background-color: black;">
+        <h1 class="private_policy">PRIVACY POLICY</h1>
+        <p style="color: white; width: 90%; font-size: 20px; margin-left: 40px;">Use of this web site signifies your acknowledgement and consent to this privacy policy.
+            Please read this privacy policy carefully before using this web site.Our dealership takes your
+            privacy seriously and is committed to safeguarding your privacy online. Because we gather certain
+            types of personal information from visitors to this web site (e.g. name, e-mail address, etc.), we
+            have developed this privacy policy (the “Privacy Policy”) to help you understand the terms and
+            conditions surrounding the collection and use of your personal information. This Privacy Policy
+            discloses the types of personal information we gather, how it is used, and how you can gain access to
+            and edit any data that we’ve collected about you at any time.</p>
+
+        <h1 class="private_policy">GUIDING PRINCIPLES:</h1>
+        <p  style="color: white; width: 90%; font-size: 20px; margin-left: 40px;">Our Privacy Policy has been developed using the following guiding principles:
+            Our dealership collects personal information online primarily to provide our visitors with a more relevant experience on this web
+            site. When doing so, we will make every reasonable effort to avoid excessive or irrelevant collection of data. Our dealership will
+            take reasonable physical, electronic and managerial measures to safeguard and secure any personal information you provide to us
+            (e.g. data will be stored in protected databases on secured servers with restricted access). However, given that electronically
+            submitted data is not 100% secure, we make no representations or warranties as to the security of any personal information you
+            submit online, which you do at your own risk.</p>
+
+        <h1 class="private_policy" >DISCLOSURE OF PERSONAL INFORMATION</h1>
+        <p style="color: white; width: 90%; font-size: 20px; margin-left: 40px;">We do not sell, rent, or trade consumer personal information to third parties other than as described in this Privacy Policy.
+            Our dealership may disclose certain personal information as follows:
+            – to business partners, such as third party service providers, agents and affiliated entities in connection with the services that
+            they perform for our dealership, such as providing certain services necessary for the administration of this web site and the
+            provision of certain interactive functionalities. Please note that some of our agents and contractors are located outside of the
+            country and, as such, are subject to foreign laws, including laws that may require disclosure of personal information to government
+            agencies in those countries.
+            – to law enforcement agencies for the purposes of investigating fraud or other offences; or
+            – to legal, financial, and other professional advisors or in connection with the sale or reorganization of all or part of its
+            business or operations. Except as provided above, our dealership will not use or disclose personal information for purposes other than those for which it was collected, except with your consent, as required or permitted by law, and to provide the features and service(s) you’ve requested. At the time you register for any such feature or service, you will be notified of, and asked to consent to, the sharing of your personal information necessary for the provision of these requested features or services.</p>
+    </div>
+
+
+
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>

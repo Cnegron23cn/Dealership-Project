@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <!--TOP NAV IN GREEN-->
+<div>
+    <div id="nav">
+        <h1 class="profile">CN </span>&nbsp;<span>
+            <span style="color: #68e48d" >A</span>utomotive </span>&nbsp;<span>
+            <span style="color:  #68e48d;" >D</span>ealership
+        </h1>
+        <ul class="nav-links">
+            <li><a href="#"  onmouseover="over(this)" onmouseout="out(this)">INVENTORY</a></li>
+            <li><a href="/contact" onmouseover="over(this)" onmouseout="out(this)">CONTACT US</a></li>
+            <li><a href="#" onmouseover="over(this)" onmouseout="out(this)">  &#9990; (718) 746-6063</a></li>
+            <li><a href="/service"  onmouseover="over(this)"onmouseout="out(this)">SERVICES</a></li>
+            <div class="dropdown">
+                <button class="dropbtn" style="border-radius: 3px;">Click For More</button>
+                <div class="dropdown-content">
+                <a href="/contact">Schedule an appointment</a>
+                <a href="/about_us">About us</a>
+                <a href="/careers">Careers</a>
+                </div>
+            </div>
+        </ul>
+    </div>
+    <div class="header" style= "background-color: rgb(27, 27, 27);">
+        <h1 class="head">We have been proudly serving the community for over 30 years</h1>
+        <a href="/dashboard" style="color: blue; margin-left: 20%; font-size: 15px;">Back To Site</a>
+
+        <!--LOGIN POPUP-->
+    <div class="popup" id="popup-2">
+        <div class="overlay-div"></div>
+            <div class="content">
+                <div class="close-btn"  onclick="loginPopup()">&#10006;</div>
+                    <h3>Login:</h3>
+                    <form action="/login" method="post" style="width: 300px; height: 300px; margin-top: 20px;">
+                    {% with messages = get_flashed_messages(category_filter=['login']) %}
+                        {%if messages %}
+                            {% for message in messages %}
+                                <p class="text-center text-danger">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" id="email" style="width: 200px; height: 30px; margin-top: 20px; margin-left: 30px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" id="password" style="width: 200px; height: 30px; margin-top: 20px;">
+                    </div>
+                        <input type="submit" value="login" style="width: 50px; height: 40px; margin-top: 10px; background-color: rgb(76, 97, 216); color: white; border: none; border-radius: 3px;">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--END OF LOGIN POP UP-->
+
+        <!--POP UP SECTION FOR SAVED SEARCHES-->
+        <div class="popup" id="popup-1">
+            <div class="overlay-div"></div>
+            <div class="content">
+                <div class="close-btn"  onclick="togglePopup()">&#10006;</div>
+                <h1>Saved Searches:</h1>
+                <p style="margin-top: 30px;">Please Login or Register to save your searches.</p>
+                <p style="text-align: center; margin-top: 20px;">Thank You.</p>
+            </div>
+        </div>
+        <!--END OF POP UP SECTION FOR SAVED SEARCHES-->
+    </div>
+
+    <!--END OF TOUR POP UP-->
+    <!--VIDEO-->
+    <div>
+        <video src="{{ url_for('static', filename='istockphoto.mp3.mp4') }}"  controls muted onmouseover="playVideo(this)" onmouseout="pauseVideo(this)"
+        style="position: absolute; top: 25%; margin-left: 80px;"></video>
+    </div>
+    <!--END VIDEO-->
+
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='carimg.avif') }}" style="width: 100%; height: 512px ">
+    </div>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>

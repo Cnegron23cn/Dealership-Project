@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+    </style>
+    <title>Document</title>
+</head>
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="246ed46a-7323-400e-bb8d-888f06349976";
+    (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+    </script>
+<body>
+    <!--TOP NAV IN GREEN-->
+<div>
+    <div id="nav">
+        <h1 class="profile">CN </span>&nbsp;<span>
+            <span style="color: #68e48d" >A</span>utomotive </span>&nbsp;<span>
+            <span style="color:  #68e48d;" >D</span>ealership
+        </h1>
+        <ul class="nav-links">
+            <!--MAKE THIS INVENTORY A SPECIFIC GET ONE-->
+            <li><a href="/dashboard_inventory"  onmouseover="over(this)" onmouseout="out(this)">INVENTORY</a></li>
+            <li><a href="/contact" onmouseover="over(this)" onmouseout="out(this)">CONTACT US</a></li>
+            <li><a href="tel:+7189535864" onmouseover="over(this)" onmouseout="out(this)">  &#9990; (718) 746-6063</a></li>
+            <li><a href="/service"  onmouseover="over(this)"onmouseout="out(this)">SERVICES</a></li>
+            <div class="dropdown">
+                <button class="dropbtn" style="border-radius: 3px;">Click For More</button>
+                <div class="dropdown-content">
+                <a href="/contact">Schedule an appointment</a>
+                <a href="/about_us">About us</a>
+                <a href="/careers">Careers</a>
+                </div>
+            </div>
+        </ul>
+    </div>
+    <!-- END OF TOP NAV IN GREEN-->
+    <!--SECONDARY NAV IN BLACK-->
+    <div class="header" style="justify-content:space-between;">
+        <h1 class="head">We have been proudly serving the community for over 30 years</h1>
+        <a href="/tour" class="tour"  onmouseover="hover(this)" onmouseout="end_hover(this)"style='background-color: #68e48d;'>
+        TOUR OUR FACILITY</a>
+        <a href="/save_search">&#9825; Saved Searches</a>
+        <a href="/logout">Sign Out</a>
+        <p style="color: white; font-family: Arial, Helvetica, sans-serif;">Welcome, {{user.first_name}}</p>
+        <!--CHALLANGE ADD A CHANGE LANGUAGE DROP DOWN HERE-->
+
+        <!--POP UP SECTION-->
+        <div class="popup" id="popup-1">
+            <div class="overlay-div"></div>
+            <div class="content">
+                <div class="close-btn"  onclick="togglePopup()">&#10006;</div>
+                <h1>Saved Searches:</h1>
+                <p style="margin-top: 30px;">Please Login or Register to save your searches.</p>
+                <p style="text-align: center; margin-top: 20px;">Thank You.</p>
+            </div>
+        </div>
+        <!--END OF POP UP SECTION-->
+    </div>
+    <!--END OF SECONDARY NAV IN BLACK-->
+    <!--FIRST BODY INFO, INTRO SCREEN-->
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='dealership.jpg') }}" class="car" alt="car">
+        <h1 class="overlay">Browse from our<br> large inventory</h1>
+        <h2 class="overlay-text">We have something for everyone. Start by browsing our massive selection today.</h2>
+        <h2 class="reviews">Over<span style="font-weight: 1000; font-family:'Audiowide', sans-serif;"> 12,000+</span> Reviews</h2>
+        <h2 class="stars">5.0<span style="color: rgb(255, 196, 0);"> &#9733; &#9733; &#9733; &#9733;  &#9733;</span></h2>
+        <div class="social-media-imgs">
+            <a href='https://www.facebook.com/' class="facebook"><img src="{{ url_for('static', filename='facebook.png') }}" alt="facebook"></a>
+            <a href='https://www.twitter.com/' class="twitter"><img src="{{ url_for('static', filename='twitter.png') }}"   alt="twitter" style="margin-left: 8px;"></a>
+            <a href='https://www.instagram.com/'class="instagram"><img src="{{ url_for('static', filename='instagram.png') }}" alt="instagram"></a>
+            <div  class ="bottom-btns" style="margin-top: -15px;"></div>
+        </div>
+    </div>
+    <!--MIDDLE SECTION, CAR SELECITON-->
+    <div class="car-box-container" >
+        <h1 class="inventoryimgs" style="text-align:center; color: white;">Featured Inventory</h1>
+        <a href="#" class="all-vehicles" onmouseover="onvehicle(this)" onmouseout="offvehicle(this)">View All Vehicles</a>
+        <div class="car-links">
+            <a href="#" onmouseover="link(this)" onmouseout="unlink(this)">SUV</a>
+            <a href="#" onmouseover="link(this)" onmouseout="unlink(this)">SPORT</a>
+            <a href="#" onmouseover="link(this)" onmouseout="unlink(this)">SEDAN</a>
+        </div>
+        <div class="car-images">
+            <a href='#'><img src="{{ url_for('static', filename='suv.png.jpg') }}" class="car-imgs" alt="car"></a>
+            <a href='#'><img src="{{ url_for('static', filename='sport.png.jpg') }}" class="car-imgs" alt="car"></a>
+            <a href='#'><img src="{{ url_for('static', filename='sedan.png.jpg') }}" class="car-imgs" alt="car"></a>
+        </div>
+        <div class="call">
+            <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">*Call For Pricing*</p>
+            <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">*Call For Pricing*</p>
+            <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">*Call For Pricing*</p>
+        </div>
+        <div class="pricing">
+            <a href='#'class="btn-price" onmouseover="oncar(this)" onmouseout="offcar(this)">View More SUVS</a>
+            <a href='#'class="btn-price" onmouseover="oncar(this)" onmouseout="offcar(this)">View More SPORTS</a>
+            <a href='#'class="btn-price" onmouseover="oncar(this)" onmouseout="offcar(this)">View More SEDANS</a>
+        </div>
+    </div>
+    <!-- END MIDDLE SECTION, CAR SELECITON-->
+    <!--REVIEW SECTION-->
+    <div style="display: flex;">
+        <div class="black-box" style="background-color: rgb(0, 0, 0); width: 60%;">
+            <h1 class="recent-reviews">Recent Reviews</h1>
+            <!--REVIEW BOXES-->
+                <div style="display: flex; margin-bottom:20px;">
+                    <div style="width: 250px; height: 250px; background: rgba(96, 218, 113, 0.3); margin-left: 20px;">
+                        <div style="display: flex;">
+                            <img src="{{ url_for('static', filename='crystal.jpg') }}" class="user" alt="user">
+                            <p style="color: white; margin-top: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Crystal Negron</p>
+                        </div>
+                        <p style="color: rgb(170, 162, 162); margin-left: 10px; margin-top: 10px;">31 October 2023</p>
+                        <p style="color: rgb(255, 196, 0); margin-left: 10px;"> &#9733; &#9733; &#9733; &#9733;  &#9733;</p>
+                        <p style="color: white; padding: 5px;">Staff was super friendly, great deals on cars!! I definetly recommend!!</p>
+                    </div>
+                    <!--next user-->
+                    <div style="width: 250px; height: 250px; background: #60da714d; margin-left: 20px;">
+                        <div style="display: flex;">
+                            <img src="{{ url_for('static', filename='brothers.jpeg') }}" class="user" alt="user">
+                            <p style="color: white; margin-top: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Leonardo Dicaprio</p>
+                        </div>
+                        <p style="color: rgb(170, 162, 162); margin-left: 10px; margin-top: 10px;">17 April 2023</p>
+                        <p style="color: rgb(255, 196, 0); margin-left: 10px;"> &#9733; &#9733; &#9733; &#9733;  &#9733;</p>
+                        <p style="color: white; padding: 5px;"> Great finance available, got my car for 100$ a month!</p>
+                    </div>
+                    <!--next user-->
+                    <div style="width: 250px; height: 250px; background: #60da714d; margin-left: 20px;">
+                        <div style="display: flex;">
+                            <img src="{{ url_for('static', filename='cheng.jpg') }}" class="user" alt="user">
+                            <p style="color: white; margin-top: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Julius Ceaser</p>
+                        </div>
+                        <p style="color: rgb(170, 162, 162); margin-left: 10px; margin-top: 10px;">04 July 2022</p>
+                        <p style="color: rgb(255, 196, 0); margin-left: 10px;"> &#9733; &#9733; &#9733;  &#9733;</p>
+                        <p style="color: white; padding: 5px;"> Bob was super helpful and kind, helped me find a car within my price range.</p>
+                    </div>
+                </div>
+                <a href="#" class="see-reviews"  onmouseover="review(this)" onmouseout="outreview(this)">See All Reviews &#10142;</a>
+                <!-- END OF REVIEW BOXES-->
+        </div>
+            <img src="{{ url_for('static', filename='carimg.avif') }}" class="car-img" alt="car">
+    </div>
+    <!-- END MIDDLE SECTION, CAR SELECITON-->
+    <!--LIVE MAP DELAERSHIP INFO-->
+    <div class="dealership-info" style="justify-content: space-around;">
+        <div class="left-side-dealership">
+            <h1 style="padding: 20px; font-size: 38px; margin-left: 30px; font-family: 'Michroma', sans-serif;">Dealership Info</h1>
+            <h3 style="margin-left: 50px;">&#9743; (645)-333-3333</h3>
+            <h3 class="hours"><span style="color: white; margin-left: 30px;">&#9745;</span>  Sales Hours</h3>
+            <h3 style="margin-left: 65px; padding: 5px;">Monday-Saturday (9:00am-8:00pm)</h3>
+            <p style="margin-left: 65px; padding: 5px;">Closed Sunday</p>
+            <h3 style="margin-left: 50px; color: rgb(131, 126, 126);" ><span style="color: white;">&#9881;</span> Service Hours</h3>
+            <h3 style="margin-left: 65px; padding: 5px;">(555)-121-1212</h3>
+            <h3 style="margin-left: 65px; padding: 5px;">Monday-Friday (10:00am-5:00pm)</h3>
+            <p style="margin-left: 65px; padding: 5px;">Closed Saturday and Sunday</p>
+        </div>
+        <div class="live-map">
+            <p style="margin: 20px;"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.224273957121!2d-73.84839622504175!3d40.75709173485551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25fe0b147d195%3A0xf55b95d4f099763b!2sCiti%20Field!5e0!3m2!1sen!2sus!4v1698953244328!5m2!1sen!2sus"
+                width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </p>
+        </div>
+    </div>
+    <!-- END OF LIVE MAP DELAERSHIP INFO-->
+    <!-- BOTTOM FOOTER INFO-->
+    <!--bottom-left-->
+    <div class="bottom-footer" style="display: flex; justify-content: space-around;">
+        <div class="bottom-left-info">
+            <h1 class="profile" style="margin-top: 20px;">CN</span>&nbsp;<span>
+                <span style="color: #68e48d" >A</span>utomotive </span>&nbsp;<span>
+                <span style="color:  #68e48d;" >D</span>ealership
+            </h1>
+            <p class="paragraph-info" style="margin-top: 10px;">Here at Automotive Dealership we consider ourselves to be one of the premier New York used and new car
+                dealers. Automotive maintains a large selection of quality Cars for New York City shoppers with thousands
+                of cars to choose from! Stop by today for a no pressure, no hassle sales experience.
+            </p>
+        </div>
+        <!--bottom-middle-->
+        <div class="useful-links">
+            <h3 style="color: white; margin-top: 30px;">Useful Links</h3>
+            <div style="margin-top:15px;"><a href="/about_us" onmouseover="onlink(this)" onmouseout="offlink(this)">Accassibality Statment</a></div>
+            <div style="margin-top:15px;"><a href="/privacy" onmouseover="onlink(this)" onmouseout="offlink(this)">Privacy Policy</a></div>
+            <div style="margin-top:15px;"><a href="/career" onmouseover="onlink(this)" onmouseout="offlink(this)">Careers</a></div>
+        </div>
+        <!--bottom-right-->
+        <div class="get-in-touch">
+            <h3 style="color: white; margin-top: 30px;">Get In Touch</h3>
+            <div style="margin-top:10px; color: white;">
+                <p style="color: darkgray; margin-bottom: 10px;">Directions:</p>
+                <a href="https://maps.app.goo.gl/9akvPSRL2E6YeCkZ8" style="color: beige; margin-top: 15px;" onmouseover="onlink(this)" onmouseout="offlink(this)">Automotive Dealership</a>
+            </div>
+            <div style="margin-top:15px; color: white;">
+                <p style="color: darkgrey;">Call at:</p>
+                <p style="margin-top: 15px;">(645)-333-3333</p>
+            </div>
+        </div>
+    </div>
+<!--END OF BOTTOM FOOTER INFO-->
+<div class="copyright">
+    <hr style="width: 85%; margin-left: 90px;">
+    <p class="copyright-info">COPYRIGHT © 2023 AUTOMOTIVE DEALERSHIP. ALL RIGHTS RESERVED.</p>
+</div>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</div>
+
+</body>
+</html>

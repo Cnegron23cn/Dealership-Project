@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+    </style>
+    <title>Login and Register</title>
+</head>
+<body>
+    <div style="display: flex; background-color: black; padding: 20px; ">
+    <h1  style="font-family: Audiowide, sans-serif; color: darkgray;">
+        CN </span>&nbsp;<span>
+        <span style="color: #68e48d" >A</span>utomotive </span>&nbsp;<span>
+        <span style="color:  #68e48d;" >D</span>ealership
+    </h1>
+    <a href="/dashboard" style="margin-left: 25px; margin-top: 15px;">Back To Site</a>
+</div>
+    <img src="{{ url_for('static', filename='carimg.avif') }}" style="width: 100%; height: 550px;" alt="car">
+
+        <div style="position: absolute; top: 10%; padding: 20px; width: 500px; margin-left:25% ; color: darkgray;">
+            <form action="/contact_us" method="post" style="margin-left: 0%;">
+                {% with messages = get_flashed_messages(category_filter=['register']) %}
+                    {%if messages %}
+                        {% for message in messages %}
+                        <p class="text-center text-danger">{{message}}</p>
+                        {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+            <h1 class="text_center">Get In Touch:</h1>
+            <div class="form-group">
+                <label for="first_name">First Name: <span style="color: red;">&#42;</span></label>
+                <input type="text" name="first_name" id="first_name" class="form-control border border-dark" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name: <span style="color: red;">&#42;</span></label>
+                <input type="text" name="last_name" id="last_name" class="form-control border border-dark" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email: <span style="color: red;">&#42;</span></label>
+                <input type="text" name="email" id="email" class="form-control border border-dark" required>
+            </div>
+            <div class="form-group">
+                <label for="number">Phone Number: <span style="color: red;">&#42;</span></label>
+                <input type="int" name="number" id="number" class="form-control border border-dark" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Message: <span style="color: red;">&#42;</span></label>
+                <textarea id="message" name="message" rows="4" cols="59" required></textarea>
+            </div>
+            <input type="submit" value="Send Message" class="btn btn-primary mt-3" style="margin-bottom: 10px;">
+        </form>
+    </div>
+    <!--LIVE MAP DELAERSHIP INFO-->
+    <div class="dealership-info" style="justify-content: space-around; display: flex; background:linear-gradient(to right, rgb(25, 31, 104) , rgb(194, 184, 184));">
+        <div class="left-side-dealership">
+            <h1 style="padding: 20px; font-size: 38px; margin-left: 30px; font-family: 'Michroma', sans-serif; color: rgb(131, 126, 126);">Dealership Info</h1>
+            <h3 style="margin-left: 30px;">&#9742;(645)-333-3333</h3>
+            <h3 class="hours" style="margin-left: 30px; color: rgb(131, 126, 126);">&#9745;  Sales Hours</h3>
+            <h3 style="margin-left: 65px; padding: 5px;">Monday-Saturday (9:00am-8:00pm)</h3>
+            <p style="margin-left: 65px; padding: 5px;">Closed Sunday</p>
+            <h3 style="margin-left: 25px; color: rgb(131, 126, 126);" ><span style="color: white;">&#9881;</span> Service Hours</h3>
+            <h3 style="margin-left: 65px; padding: 5px;">(555)-121-1212</h3>
+            <h3 style="margin-left: 65px; padding: 5px;">Monday-Friday (10:00am-5:00pm)</h3>
+            <p style="margin-left: 65px; padding: 5px;">Closed Saturday and Sunday</p>
+        </div>
+        <div class="live-map">
+            <p style="margin: 20px;"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.224273957121!2d-73.84839622504175!3d40.75709173485551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25fe0b147d195%3A0xf55b95d4f099763b!2sCiti%20Field!5e0!3m2!1sen!2sus!4v1698953244328!5m2!1sen!2sus"
+                width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </p>
+        </div>
+    </div>

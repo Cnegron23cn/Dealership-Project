@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+    </style>
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <div id="nav">
+        <h1 class="profile">CN </span>&nbsp;<span>
+            <span style="color: #68e48d" >A</span>utomotive </span>&nbsp;<span>
+            <span style="color:  #68e48d;" >D</span>ealership
+        </h1>
+        <ul class="nav-links">
+            <li><a href="/allcars"  onmouseover="over(this)" onmouseout="out(this)">INVENTORY</a></li>
+            <li><a href="/contact" onmouseover="over(this)" onmouseout="out(this)">CONTACT US</a></li>
+            <li><a href="#" onmouseover="over(this)" onmouseout="out(this)"> &#9990; (718) 746-6063</a></li>
+            <li><a href="/service"  onmouseover="over(this)"onmouseout="out(this)">SERVICES</a></li>
+            <div class="dropdown">
+                <button class="dropbtn" style="border-radius: 3px;">Click For More</button>
+                <div class="dropdown-content">
+                <a href="/contact">Schedule an appointment</a>
+                <a href="/about_us">About us</a>
+                <a href="/careers">Careers</a>
+                </div>
+            </div>
+        </ul>
+    </div>
+    <div class="header" style="justify-content:space-between;">
+        <h1 class="head">We have been proudly serving the community for over 30 years</h1>
+        <a href="/tour" class="tour" onmouseover="hover(this)" onmouseout="end_hover(this)" style="border: none; color: white; background-color: #68e48d; margin-left: 20%;">
+        TOUR OUR FACILITY</a>
+        <a href="/dashboard" style="color: blue;">Back to Home Page</a>
+
+        <!--LOGIN POPUP-->
+    <div class="popup" id="popup-2">
+        <div class="overlay-div"></div>
+            <div class="content">
+                <div class="close-btn"  onclick="loginPopup()">&#10006;</div>
+                    <h3>Login:</h3>
+                    <form action="/login" method="post" style="width: 300px; height: 300px; margin-top: 20px;">
+                    {% with messages = get_flashed_messages(category_filter=['login']) %}
+                        {%if messages %}
+                            {% for message in messages %}
+                                <p class="text-center text-danger">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" id="email" style="width: 200px; height: 30px; margin-top: 20px; margin-left: 30px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" id="password" style="width: 200px; height: 30px; margin-top: 20px;">
+                    </div>
+                        <input type="submit" value="login" style="width: 50px; height: 40px; margin-top: 10px; background-color: rgb(76, 97, 216); color: white; border: none; border-radius: 3px;">
+                    </form>
+                </div>
+            </div>
+        </div>
+            <!--END OF LOGIN POP UP-->
+
+        <!--POP UP SECTION FOR SAVED SEARCHES-->
+        <div class="popup" id="popup-1">
+            <div class="overlay-div"></div>
+            <div class="content">
+                <div class="close-btn"  onclick="togglePopup()">&#10006;</div>
+                <h1>Saved Searches:</h1>
+                <p style="margin-top: 30px;">Please Login or Register to save your searches.</p>
+                <p style="text-align: center; margin-top: 20px;">Thank You.</p>
+            </div>
+        </div>
+        <!--END OF POP UP SECTION FOR SAVED SEARCHES-->
+    </div>
+
+    <!--END OF TOUR POP UP-->
+    <!--END OF SECONDARY NAV IN BLACK-->
+    <!--BODY -->
+    <div style="display: flex; margin: 40px;">
+        <div style="width: 50%; ">
+            <h1>Keeping your car maintained is essential for it to run properly on New York City roads.</h1>
+            <h3 style="margin-top: 30px; color: rgb(66, 65, 65);"> Not only is regular maintenance important for the performance of your vehicle, but it also ensures that
+                mechanics will be able to intercept any mechanical or safety issues before they become major problems.
+                At automotive dealership, our New York City service department makes maintaining your vehicle easy and affordable
+                so you can get back on New York roads and on with your day. Learn more about the services we offer below, and feel 
+                free to contact our service team if you have any questions!
+            </h3>
+        </div>
+        <div>
+            <img src="{{ url_for('static', filename='carimg.avif') }}" style=" height: 400px;" alt="car">
+        </div>
+    </div>
+    <!--SECOND BOODY TAG-->
+    <div style="display: flex;">
+        <div>
+            <img src="{{ url_for('static', filename='oilchange.jpg') }}" style=" height: 400px;" alt="car">
+        </div>
+        <div style="margin-left: 20px;">
+            <h1 >Your Long Island City Service Department</h1>
+            <h3 style="margin-top: 20px; color: rgb(66, 65, 65);">If you're looking for service in New York City or a used service department, Major World can
+                cover all of your vehicle needs. We take care of everything from regular maintenance to major
+                repairs on your vehicle. Here are some of the services you can expect when you bring your car
+                to our Long Island City service department:
+            </h3>
+            <div style="margin-top: 30px;">
+                <h3 style="margin-bottom: 10px;"><span style="color: blue;">&#8605;</span> Oil Change</h3>
+                <h3 style="margin-bottom: 10px;"><span style="color: blue;">&#8605;</span> Tire Rotation/Alignment</h3>
+                <h3 style="margin-bottom: 10px;"><span style="color: blue;">&#8605;</span> Battery Check/Replacement</h3>
+                <h3 style="margin-bottom: 10px;"><span style="color: blue;">&#8605;</span> Transmission Flush</h3>
+                <h3 style="margin-bottom: 10px;"><span style="color: blue;">&#8605;</span> Brake Checks/Replacement</h3>
+            </div>
+        </div>
+    </div>
+    <!--THIRD BODY TAG-->
+    <div style="display: flex;">
+        <div style="width: 50%; margin: 20px; ">
+            <h1>Parts Center</h1>
+            <h3 style="margin-top: 30px; color: rgb(66, 65, 65);"> Are you looking for a new part for your
+                vehicle? Or have you been thinking of sprucing up your ride with some accessories? Our parts
+                center has a variety of quality OEM parts available for you to purchase. Make an appointment with us
+                today to have your vehicle inspected and maintained by our professionals. Whether you need a major
+                repair or just an oil change, our mechanics have the tools and expertise you need to get back to
+                your day as quickly as possible.
+            </h3>
+        </div>
+        <div>
+            <img src="{{ url_for('static', filename='mechanic.jpg') }}" style=" height: 350px; width: 600px;" alt="car">
+        </div>
+    </div>
+    <a href="/contact" style="color: blue; background-color: blue; color:white; border-radius: 3px; margin: 30px; padding: 10px;">
+    Contact Us</a>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</div>
+
+</body>
+</html>

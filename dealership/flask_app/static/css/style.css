@@ -1,0 +1,485 @@
+
+/* TOP Green HEADER*/
+.header {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+
+}
+
+.tour {
+    margin-left: 50px;
+    background-color: rgb(66, 163, 219);
+    transition: color 0.5s;
+    padding: 8px;
+    border-radius: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.head {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-size: 15px;
+    padding-left: 7px;
+    }
+
+    /* END OF TOP GREEN HEADER */
+    /* START OF SECOND HEADER*/
+#nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+    background-color: rgb(0,51, 49, 49);
+    position: sticky;
+    top: 0%;
+    z-index: 999;
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    list-style-type: none;
+    padding-right: 15px;
+}
+.profile {
+    display: flex;
+    align-items: center;
+    font-family:'Audiowide', sans-serif;
+    padding-left: 10px;
+    color: white;
+
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn {
+    color: white;
+    background-color: rgb(97, 172, 241);
+    box-shadow: 5px 5px black;
+    padding-right: 10px;
+}
+body {
+    font-family: sans-serif;
+}
+
+.reg, .loginbtn {
+    background-color: rgb(66, 163, 219);
+    border-radius: 3px;
+    padding: 8px;
+    width: 60px;
+    text-align: center;
+}
+.reg {
+    margin-left: 47px;
+}
+
+.loginbtn {
+    color: white;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+/*  END OF SECOND TOP NAV*/
+
+
+/* CAR BODY TEXT*/
+.car {
+    width: 100%;
+    display: block;
+    height: 550px;
+}
+.image-container {
+    display: inline-block;
+    width: 100%;
+
+}
+.overlay {
+    position: absolute;
+    top: 25%;
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    font-family: 'Michroma', sans-serif;
+    font-weight: lighter;
+    background: rgba(51, 51, 51, 0.3);
+    margin-left: 10px;
+    width:40%;
+
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    margin-left: 10px;
+    background: rgba(106, 107, 106, 0.3);
+    font-family:'Audiowide', sans-serif;
+    font-size: 21px;
+    z-index: 3;
+}
+.reviews {
+    position: absolute;
+    top: 60%;
+    margin-left: 10px;
+}
+.stars {
+    position: absolute;
+    top: 70%;
+    margin-left: 20px;
+
+}
+
+.social-media-imgs {
+    position: absolute;
+    top: 80%;
+    margin: 20px;
+    display: flex;
+
+}
+
+.facebook, .twitter, .instagram {
+    width: 35px;
+    height: 35px;
+    display: flex;
+}
+
+/*CAR BODY TEXT */
+
+
+/*DROP DOWN BUTTON */
+.dropbtn {
+    background-color: #68e48d;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 120px;
+    background-color: #f9f9f9;
+}
+.dropdown-content a {
+    color: black;
+    padding: 5px;
+    display: block;
+
+}
+.dropdown-content a:hover {background-color: #dbdada}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* END OF DROPDOWN */
+
+
+/* CAR BOX CONTAINER */
+.car-box-container {
+    width: 100%;
+    height: 530px;
+    background:linear-gradient( rgba(0, 0, 0, 0.8), rgba(70, 62, 62, 0) 90.71%);
+    margin-top: -10px;
+}
+.inventoryimgs {
+    color: white;
+    font-family: 'Michroma', sans-serif;
+    font-size: 35px;
+    text-align: center;
+    padding: 13px;
+    width: 100%;
+}
+.car-links {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.car-imgs {
+    width: 250px;
+    height: 280px;
+}
+.car-images, .pricing, .call {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+.btn-price {
+    background-color: grey;
+    border-radius: 3%;
+    padding: 10px;
+    box-shadow: 10px 5px 5px rgb(44, 43, 43);
+}
+.all-vehicles {
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+    justify-content:center;
+    font-family: 'Michroma', sans-serif;
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+/*END OF CAR BOX CONTAINER*/
+
+/*REVIEW SECTION */
+.car-img {
+    width: 40%;
+    height: 450px;
+}
+.recent-reviews {
+    color: rgb(255, 255, 255);
+    font-family: 'Michroma', sans-serif;
+    padding: 20px;
+}
+
+.user {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    border-radius: 50%;
+}
+
+.see-reviews {
+    background-color:blue;
+    border-radius: 3px;
+    height: 40px;
+    margin-left: 20px;
+    padding: 10px;
+
+}
+/*END OF REVIEW SECTION */
+/*DEALERSHIP INFO*/
+.dealership-info {
+    background:linear-gradient(to right, rgb(25, 31, 104) , rgb(194, 184, 184));
+    width: 100%;
+    height: 400px;
+    display: flex;
+}
+.left-side-dealership {
+    width: 50%;
+    color: aliceblue;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.hours {
+    color: rgb(131, 126, 126);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 20px;
+    padding-top: 10px;
+
+}
+
+/* END OF DEALERSHIP INFO*/
+/*BOTTOM FOOTER INFO*/
+.bottom-footer {
+    width: 100%;
+    height: 250px;
+    background:linear-gradient(to right, rgb(41, 44, 54) , rgb(0, 0, 0));
+}
+
+.bottom-left-info {
+    width: 30%;
+    color: white;
+}
+
+.paragraph-info {
+    margin-left: 20px;
+}
+.copyright {
+    background:linear-gradient(to right, rgb(41, 44, 54) , rgb(0, 0, 0));
+}
+
+.copyright-info {
+    margin-left: 85px;
+    padding: 5px;
+    color: white;
+    font-size: 13px;
+}
+
+/*END OF BOTTOM FOOTER INFO*/
+/*CHAT BUTTONS*/
+.bottom-btns {
+    position: fixed;
+    margin-left: 930px;
+}
+.chat-btn {
+    width: 150px;
+    height: 50px;
+    margin: 10px;
+    color:lightseagreen;
+    border-radius: 50px;
+    font-size: 20px;
+    border-color: lightseagreen;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 35px;
+}
+.spanish-btn {
+    width: 150px;
+    height: 50px;
+    margin: 10px;
+    background-color: rgb(37, 118, 211);
+    color: white;
+    border-radius: 50px;
+    box-shadow: 10px 5px 5px black;
+    font-size: 18px;
+    padding: 5px;
+    cursor: pointer;
+}
+/*END OF CHAT BUTTONS*/
+/*POP UP FEATURE*/
+
+.popup .overlay-div {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(106, 107, 106, 0.3);
+    z-index: 999;
+    display: none;
+}
+
+.popup .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    background: #fff;
+    width: 450px;
+    height: 220px;
+    z-index: 999;
+    text-align: center;
+    padding: 20px;
+}
+
+.popup .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background: black;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.popup.active .overlay-div {
+    display: block;
+}
+
+.popup.active .content {
+    transform: translate(-50%,-50%) scale(1);
+    transition: all 300ms ease-in-out;
+}
+
+.popupbtn {
+    border: none;
+    color: blue;
+    background-color: black;
+    cursor: pointer;
+}
+/*END OF POP UP FEATURE*/
+
+/*INVENTORY SECTION*/
+
+.container {
+    height: 1300px;
+    width: 90%;
+    margin-left:80px;
+    padding: 10px;
+}
+
+.inventory {
+    margin: 5px;
+    height: 250px;
+    width:350px;
+    padding: 5px;
+    border-width: 2px;
+}
+
+.car-box {
+    border: rgb(155, 150, 150);
+    border-style:solid;
+    border-width: 1px;
+    margin: 5px;
+    height: 400px;
+}
+/*END OF INVENTORY SECTION*/
+/*DROP DOWN FOR FILTER*/
+.dropdownbtn {
+    background-color: #f7f7f7;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 1px;
+    border-color: gray;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+/*END OF DROP DOWN FOR FILTER*/
+/*PRIVATE POLICY PAGE*/
+
+.private_policy {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    padding: 10px;
+
+}
+/*EMPLOYMENT FORM */
+.career-container {
+    display: flex;
+    height: 400px;
+    width: 600px;
+    background-color: rgb(247, 242, 204);
+    margin-left: 25%;
+}
+
+.career-input{
+    width: 250px;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 3px;
+    border-color: lightgrey;
+}
+
+.career-label {
+    margin-left: 10px;
+    font-size: 20px;
+}
+/*END OF CAREER*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
